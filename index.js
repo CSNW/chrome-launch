@@ -25,7 +25,8 @@ function launchChrome(uri, opts) {
   ].concat(opts.args || [])
 
   var ps = spawn(chrome, args, {
-    env: opts.env || process.env
+      env: opts.env || process.env
+    , detached: true
   })
 
   process.on('exit', onClose)
